@@ -1,5 +1,5 @@
 
 SELECT number, avg(startYear - birthYear) AS avgAge
-FROM memberInKnesset natural join members natural join knessets
-group by number
-order by number;
+FROM memberInKnesset NATURAL JOIN members NATURAL JOIN knessets
+GROUP BY number
+ORDER BY number;
