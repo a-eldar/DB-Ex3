@@ -1,6 +1,6 @@
-# for each kenneset we need to return the distinct number of parties which members of the kenneset are members of them
+--  for each kenneset we need to return the distinct number of parties which members of the kenneset are members of them
 
-SELECT number AS knesset_number, count(distinct party) AS parties_count
+SELECT number, count(distinct party) AS partyCount
 FROM memberInKnesset
-group by number
-order by knesset_number;  
+GROUP BY number
+ORDER BY number;
