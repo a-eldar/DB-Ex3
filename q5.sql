@@ -1,4 +1,4 @@
-WITH PartyWomen AS (
+WITH PartyWomen(party, number, femaleCount) AS (
     SELECT party, number, count(*) AS femaleCount
     FROM memberInKnesset NATURAL JOIN members
     WHERE gender = 'female'
