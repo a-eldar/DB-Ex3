@@ -7,4 +7,5 @@ WITH PartyWomen(party, number, femaleCount) AS (
 SELECT party, number, femaleCount / count(*) * 100
 FROM memberInKnesset NATURAL JOIN PartyWomen
 GROUP BY party, number, femaleCount
+HAVING femaleCount / count(*) >= 0.3
 ORDER BY party, number;
