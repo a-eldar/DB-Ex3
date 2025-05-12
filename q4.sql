@@ -5,7 +5,7 @@ WITH Parties AS (
     GROUP BY number, party
 )
 
-SELECT p1.number, p1.party, p1.party_size
+SELECT p1.number, p1.party, p1.party_size AS membercount
 FROM Parties p1
 WHERE p1.party_size >= ALL (
     SELECT p2.party_size
