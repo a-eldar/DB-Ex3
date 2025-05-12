@@ -13,21 +13,21 @@ WHERE
   d1.name < d2.name
   -- Ensure they have the same causes
   AND NOT EXISTS (
-    SELECT cause
+    SELECT DISTINCT cause
     FROM donors
     WHERE name = d1.name
     EXCEPT
-    SELECT cause
+    SELECT DISTINCT cause
     FROM donors
     WHERE name = d2.name
   )
  -- Ensure they have the same causes
   AND NOT EXISTS (
-    SELECT cause
+    SELECT DISTINCT cause
     FROM donors
     WHERE name = d2.name
     EXCEPT
-    SELECT cause
+    SELECT DISTINCT cause
     FROM donors
     WHERE name = d1.name
   )
